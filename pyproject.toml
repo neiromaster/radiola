@@ -26,7 +26,8 @@ classifiers = [
 dependencies = [
   "textual>=1.0.0",
   "httpx>=0.28.1",
-  "textual-dev>=1.7.0"
+  "textual-dev>=1.7.0",
+  "black"
 ]
 
 [project.scripts]
