@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "radiola"
+dynamic = ["version"]
+description = ''
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Maxim (neiromaster) Gavrilenko", email = "parrysh@mail.ru" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "textual>=1.0.0",
+  "httpx>=0.28.1",
+  "textual-dev>=1.7.0"
+]
+
+[project.urls]
+Documentation = "https://github.com/Maxim (neiromaster) Gavrilenko/radiola#readme"
+Issues = "https://github.com/Maxim (neiromaster) Gavrilenko/radiola/issues"
+Source = "https://github.com/Maxim (neiromaster) Gavrilenko/radiola"
+
+[tool.hatch.version]
+path = "src/radiola/__about__.py"
+
+[tool.hatch.envs.default]
+installer = "uv"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/radiola tests}"
+
+[tool.coverage.run]
+source_pkgs = ["radiola", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/radiola/__about__.py",
+]
+
+[tool.coverage.paths]
+radiola = ["src/radiola", "*/radiola/src/radiola"]
+tests = ["tests", "*/radiola/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
