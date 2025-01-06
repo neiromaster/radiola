@@ -1,5 +1,6 @@
 from textual.app import ComposeResult, App
 from textual.widgets import Label, Header, Footer
+
 from radiola.services.player import Player
 
 
