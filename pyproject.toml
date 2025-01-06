@@ -29,10 +29,13 @@ dependencies = [
   "textual-dev>=1.7.0"
 ]
 
+[project.scripts]
+radiola = "radiola.entry_points:radiola"
+
 [project.urls]
-Documentation = "https://github.com/Maxim (neiromaster) Gavrilenko/radiola#readme"
-Issues = "https://github.com/Maxim (neiromaster) Gavrilenko/radiola/issues"
-Source = "https://github.com/Maxim (neiromaster) Gavrilenko/radiola"
+Documentation = "https://github.com/neiromaster/radiola#readme"
+Issues = "https://github.com/neiromaster/radiola/issues"
+Source = "https://github.com/neiromaster/radiola"
 
 [tool.hatch.version]
 path = "src/radiola/__about__.py"
