@@ -15,13 +15,6 @@ class RadiolaApp(App):
         yield Footer()
 
     def on_mount(self):
-        self.player.play("http://example.com/stream")
-
-
-def run():
-    app = RadiolaApp()
-    app.run()
-
-
-if __name__ == "__main__":
-    run()
+        self.player.play(
+            "https://radio.kamchatkalive.ru:8103/rock"
+        )
